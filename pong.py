@@ -66,9 +66,9 @@ background = (0, 153, 153)
 font.init()
 font = font.SysFont("Arial", 50)
 
-p1 = Player(10, 200, 5, "platform.png", 50, 100)
+p1 = Player(10, 200, 5, "pong_p1.png", 50, 100)
 score_1 = 0
-p2 = Player(640, 200, 5, "platform.png", 50, 100)
+p2 = Player(640, 200, 5, "pong_p1.png", 50, 100)
 score_2 = 0
 ball = Ball(250, 300, 0, "ball.png", 50, 50)
 speedx = 7
