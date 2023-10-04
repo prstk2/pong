@@ -41,11 +41,11 @@ class Ball(GameSprite):
         if self.rect.y <= 0 or self.rect.y >= 450:
             speedy *= -1
 
-        if self.rect.x <= -50:
+        if self.rect.x < -60:
             score_2 += 1
             self.rect.x = 250
             self.rect.y = 350
-        if self.rect.x >= 700:
+        if self.rect.x > 710:
             score_1 += 1
             self.rect.x = 250
             self.rect.y = 350
@@ -64,7 +64,7 @@ FPS = 60
 window = display.set_mode(WINDOW_SIZE)
 background = (0, 153, 153)
 font.init()
-font = font.SysFont("Arial", 50)
+font = font.SysFont("Arial", 42)
 
 p1 = Player(10, 200, 5, "pong_p1.png", 50, 100)
 score_1 = 0
@@ -92,6 +92,12 @@ while running:
         p1.update()
         p1.update()
         ball.update()
+
+
+        score_p1 = font.render(str(score_1), False, (150, 50, 50))
+        window.blit(score_p1, (100, 50))
+        score_p2 = font.render(str(score_2), False, (50, 50, 150))
+        window.blit(score_p2, (600, 50))
 
         if score_1 >= 3:
             finished = True
